@@ -310,4 +310,12 @@ function Mission4(firearm, unit)
         }
         return unit
     }
+
+     //console.log(Mission4())
     
+
+     function Mission5(unit)
+     {
+        return `${unit.trainingPrograms.reduce((res, pro) => res + pro.duration, 0 )}`
+     }
+          console.log(Mission5(militaryUnit))
