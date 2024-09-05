@@ -287,3 +287,27 @@ function Mission2(unit)
         return `${unit.personnel.length}`
     }
     console.log(typeof Mission2(militaryUnit))
+    
+
+function Mission3(newDeployment , unit)
+    {
+        unit.history.push({eventDate: unit.currentDeployment.startDate, eventDescription: unit.currentDeployment.mission })
+        unit.currentDeployment = newDeployment
+    }
+    //console.log(Mission3())
+
+
+function Mission4(firearm, unit)
+    {
+        const isEx = unit.equipment.firearms.filter(f => f.type == firearm.type)
+        if (isEx != null && isEx.status == firearm.status)
+        {
+            isEx.quantity += firearm.quantity 
+        }
+        else
+        {
+            unit.equipment.firearms.push(firearm)
+        }
+        return unit
+    }
+    
