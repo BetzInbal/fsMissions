@@ -319,3 +319,11 @@ function Mission4(firearm, unit)
         return `${unit.trainingPrograms.reduce((res, pro) => res + pro.duration, 0 )}`
      }
           console.log(Mission5(militaryUnit))
+
+          module.exports = {
+            Mission1,
+            Mission2,
+            Mission3,
+            Mission4,
+            Mission5
+          }
