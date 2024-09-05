@@ -272,6 +272,8 @@ let militaryUnit = {
   
   };
   
+
+
   function Mission1(unit)
     {
         
@@ -280,27 +282,29 @@ let militaryUnit = {
         return `rank: ${cfs.rank} name: ${cfs.name} phon: ${cfs.contact.phone} }`
 
     }
-    console.log(Mission1(militaryUnit))
+
 
 function Mission2(unit)
     {
         return `${unit.personnel.length}`
     }
-    console.log(typeof Mission2(militaryUnit))
+
     
 
 function Mission3(newDeployment , unit)
     {
         unit.history.push({eventDate: unit.currentDeployment.startDate, eventDescription: unit.currentDeployment.mission })
         unit.currentDeployment = newDeployment
+        return unit
     }
-    //console.log(Mission3())
+
 
 
 function Mission4(firearm, unit)
     {
-        const isEx = unit.equipment.firearms.filter(f => f.type == firearm.type)
-        if (isEx != null && isEx.status == firearm.status)
+        const isEx = unit.equipment.firearms.filter(f => f.type == firearm.type)[0]
+        console.log(isEx)
+        if (isEx != undefined && isEx.status == firearm.status)
         {
             isEx.quantity += firearm.quantity 
         }
@@ -311,14 +315,14 @@ function Mission4(firearm, unit)
         return unit
     }
 
-     //console.log(Mission4())
+
     
 
      function Mission5(unit)
      {
         return `${unit.trainingPrograms.reduce((res, pro) => res + pro.duration, 0 )}`
      }
-          console.log(Mission5(militaryUnit))
+
 
           module.exports = {
             Mission1,
