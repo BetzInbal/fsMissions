@@ -258,6 +258,7 @@ let militaryUnit = {
   
     ],
   
+    
     currentDeployment: {
   
       location: "Middle East",
