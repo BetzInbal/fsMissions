@@ -274,10 +274,16 @@ let militaryUnit = {
   
   function Mission1(unit)
     {
-        console.log(unit.commandStructure.chiefOfStaff)
+        
         const cfs = unit.commandStructure.chiefOfStaff
 
         return `rank: ${cfs.rank} name: ${cfs.name} phon: ${cfs.contact.phone} }`
 
     }
     console.log(Mission1(militaryUnit))
+
+function Mission2(unit)
+    {
+        return `${unit.personnel.length}`
+    }
+    console.log(typeof Mission2(militaryUnit))
